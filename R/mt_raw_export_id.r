@@ -13,12 +13,13 @@
 #'
 #' @export
 
-mt_raw_export_id <- function(event, selectors, date_from, date_to, api_user_id, secret_key, ...) {
+mt_raw_export_id <- function(event, selectors, date_from, date_to, api_user_id, secret_key, ... = NULL) {
   url <- mt_url_build("https://tracker.my.com/api/raw/v1/export/create.json",
                       event = event,
                       selectors = selectors,
                       dateFrom = date_from,
-                      dateTo = date_to)
+                      dateTo = date_to,
+                      ... = ...)
 
   signature <- mt_auth(url, api_user_id, secret_key)
 
