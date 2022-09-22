@@ -8,7 +8,7 @@
 #'
 #' @export
 
-mt_raw_download <- function(download_link, file_path, overwrite = F) {
+mt_download <- function(download_link, file_path, overwrite = F) {
   if (endsWith(file_path, ".csv")) {
     gz_file_path <- paste0(file_path, ".gz")
   } else if (endsWith(file_path, ".gz")) {
